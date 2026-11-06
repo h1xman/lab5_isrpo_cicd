@@ -31,6 +31,51 @@ class CircleTestCase(unittest.TestCase):
             with self.subTest():
                 self.assertAlmostEqual(param, expected)
 
+    def test_input_correctness_area_strings(self):
+        test_data = [
+            "dhgsdhgjhklsf",
+            "",
+            "578",
+            "0"
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.circle.area(i))
+
+    def test_input_correctness_area_negative(self):
+        test_data = [
+            -9,
+            -0.00001,
+            -100000000000000,
+            -34
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.circle.area(i))
+
+    def test_input_correctness_perimeter_strings(self):
+        test_data = [
+            "dhgsdhgjhklsf",
+            "",
+            "578",
+            "0"
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.circle.perimeter(i))
+    
+    def test_input_correctness_perimeter_negative(self):
+        test_data = [
+            -9,
+            -0.00001,
+            -100000000000000,
+            -34
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.circle.perimeter(i))
+        
+
 class RectangleTestCase(unittest.TestCase):
 
     def test_perimeter_correctness(self):
@@ -60,6 +105,52 @@ class RectangleTestCase(unittest.TestCase):
             expected = i[2]
             with self.subTest():
                 self.assertAlmostEqual(param, expected)
+
+    def test_input_correctness_area_strings(self):
+        test_data = [
+            ["dhgsdhgjhklsf", "dhgsdhgjhklsf"],
+            ["", ""],
+            ["578", "578"],
+            ["0", 5],
+            [5, "0"]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.rectangle.area(i[0], i[1]))
+
+    def test_input_correctness_area_negative(self):
+        test_data = [
+            [-9, 5],
+            [5, -0.00001],
+            [-100000000000000, -34],
+            [-34, -34]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.rectangle.area(i[0], i[1]))
+
+    def test_input_correctness_perimeter_strings(self):
+        test_data = [
+            ["dhgsdhgjhklsf", "dhgsdhgjhklsf"],
+            ["", ""],
+            ["578", "578"],
+            ["0", 5],
+            [5, "0"]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.rectangle.perimeter(i[0], i[1]))
+
+    def test_input_correctness_perimeter_negative(self):
+        test_data = [
+            [-9, 5],
+            [5, -0.00001],
+            [-100000000000000, -34],
+            [-34, -34]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.rectangle.perimeter(i[0], i[1]))
 
 
 class SquareTestCase(unittest.TestCase):
@@ -91,6 +182,50 @@ class SquareTestCase(unittest.TestCase):
             expected = i[1]
             with self.subTest():
                 self.assertAlmostEqual(param, expected)
+
+    def test_input_correctness_area_strings(self):
+        test_data = [
+            "dhgsdhgjhklsf",
+            "",
+            "578",
+            "0"
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.square.area(i))
+
+    def test_input_correctness_area_negative(self):
+        test_data = [
+            -9,
+            -0.00001,
+            -100000000000000,
+            -34
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.square.area(i))
+
+    def test_input_correctness_perimeter_strings(self):
+        test_data = [
+            "dhgsdhgjhklsf",
+            "",
+            "578",
+            "0"
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.square.perimeter(i))
+
+    def test_input_correctness_perimeter_negative(self):
+        test_data = [
+            -9,
+            -0.00001,
+            -100000000000000,
+            -34
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.square.perimeter(i))
 
 
 class TriangleTestCase(unittest.TestCase):
@@ -124,4 +259,50 @@ class TriangleTestCase(unittest.TestCase):
             with self.subTest():
                 self.assertAlmostEqual(param, expected)
 
+    def test_input_correctness_area_strings(self):
+        test_data = [
+            ["dhgsdhgjhklsf", "dhgsdhgjhklsf"],
+            ["", ""],
+            ["578", "578"],
+            ["0", 5],
+            [5, "0"]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.triangle.area(i[0], i[1]))
+
+    def test_input_correctness_area_negative(self):
+        test_data = [
+            [-9, 5],
+            [5, -0.00001],
+            [-100000000000000, -34],
+            [-34, -34]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.triangle.area(i[0], i[1]))
+
+    def test_input_correctness_perimeter_strings(self):
+        test_data = [
+            ["dhgsdhgjhklsf", "dhgsdhgjhklsf", "dhgsdhgjhklsf"],
+            ["", "", ""],
+            ["578", "578", "578"],
+            ["0", 5, 5],
+            [5, "0", 5],
+            [5, 5, "0"]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.triangle.perimeter(i[0], i[1], i[2]))
+
+    def test_input_correctness_perimeter_negative(self):
+        test_data = [
+            [-9, 5, 5],
+            [5, -0.00001, 5],
+            [5, 5, -34],
+            [-100000000000000, -34, -9]
+        ]
+        for i in test_data:
+            with self.subTest():
+                self.assertRaises("Incorrect input!", gl.triangle.perimeter(i[0], i[1], i[2]))
 
