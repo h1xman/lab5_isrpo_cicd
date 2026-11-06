@@ -40,7 +40,7 @@ class CircleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.circle.area(i))
+                self.assertRaises(ValueError, gl.circle.area, i)
 
     def test_input_correctness_area_negative(self):
         test_data = [
@@ -51,7 +51,7 @@ class CircleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.circle.area(i))
+                self.assertRaises(ValueError, gl.circle.area, i)
 
     def test_input_correctness_perimeter_strings(self):
         test_data = [
@@ -62,7 +62,7 @@ class CircleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.circle.perimeter(i))
+                self.assertRaises(ValueError, gl.circle.perimeter, i)
     
     def test_input_correctness_perimeter_negative(self):
         test_data = [
@@ -73,7 +73,7 @@ class CircleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.circle.perimeter(i))
+                self.assertRaises(ValueError, gl.circle.perimeter, i)
         
 
 class RectangleTestCase(unittest.TestCase):
@@ -116,7 +116,7 @@ class RectangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.rectangle.area(i[0], i[1]))
+                self.assertRaises(ValueError, gl.rectangle.area, i[0], i[1])
 
     def test_input_correctness_area_negative(self):
         test_data = [
@@ -127,7 +127,7 @@ class RectangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.rectangle.area(i[0], i[1]))
+                self.assertRaises(ValueError, gl.rectangle.area, i[0], i[1])
 
     def test_input_correctness_perimeter_strings(self):
         test_data = [
@@ -139,7 +139,7 @@ class RectangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.rectangle.perimeter(i[0], i[1]))
+                self.assertRaises(ValueError, gl.rectangle.perimeter, i[0], i[1])
 
     def test_input_correctness_perimeter_negative(self):
         test_data = [
@@ -150,7 +150,7 @@ class RectangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.rectangle.perimeter(i[0], i[1]))
+                self.assertRaises(ValueError, gl.rectangle.perimeter, i[0], i[1])
 
 
 class SquareTestCase(unittest.TestCase):
@@ -192,7 +192,7 @@ class SquareTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.square.area(i))
+                self.assertRaises(ValueError, gl.square.area, i)
 
     def test_input_correctness_area_negative(self):
         test_data = [
@@ -203,7 +203,7 @@ class SquareTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.square.area(i))
+                self.assertRaises(ValueError, gl.square.area, i)
 
     def test_input_correctness_perimeter_strings(self):
         test_data = [
@@ -214,7 +214,7 @@ class SquareTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.square.perimeter(i))
+                self.assertRaises(ValueError, gl.square.perimeter, i)
 
     def test_input_correctness_perimeter_negative(self):
         test_data = [
@@ -225,7 +225,7 @@ class SquareTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.square.perimeter(i))
+                self.assertRaises(ValueError, gl.square.perimeter, i)
 
 
 class TriangleTestCase(unittest.TestCase):
@@ -269,7 +269,7 @@ class TriangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.triangle.area(i[0], i[1]))
+                self.assertRaises(ValueError, gl.triangle.area, i[0], i[1])
 
     def test_input_correctness_area_negative(self):
         test_data = [
@@ -280,7 +280,7 @@ class TriangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.triangle.area(i[0], i[1]))
+                self.assertRaises(ValueError, gl.triangle.area, i[0], i[1])
 
     def test_input_correctness_perimeter_strings(self):
         test_data = [
@@ -293,7 +293,7 @@ class TriangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.triangle.perimeter(i[0], i[1], i[2]))
+                self.assertRaises(ValueError, gl.triangle.perimeter, i[0], i[1], i[2])
 
     def test_input_correctness_perimeter_negative(self):
         test_data = [
@@ -304,5 +304,4 @@ class TriangleTestCase(unittest.TestCase):
         ]
         for i in test_data:
             with self.subTest():
-                self.assertRaises("Incorrect input!", gl.triangle.perimeter(i[0], i[1], i[2]))
-
+                self.assertRaises(ValueError, gl.triangle.perimeter, i[0], i[1], i[2])
